@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Big Movie Weekend</title>
+  <title>Watchlist</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,29 +16,39 @@
 
 <body>
   <header>
-    <h1><i class="fas fa-film"></i> Big Movie Weekend</h1>
+    <h1><i class="fas fa-film"></i> Watchlist</h1>
     <p>Find the perfect movies for your weekend!</p>
+
+    <!-- Navigation with search and watchlist button -->
+    <div class="nav-container">
+      <div class="search-container">
+        <form id="search-form">
+          <input type="text" id="movie-search" placeholder="Search for a movie...">
+          <button type="submit" id="search-button"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+      <button id="toggle-watchlist-btn" class="mobile-watchlist-btn">
+        <i class="fas fa-list-ul"></i> Watchlist
+      </button>
+    </div>
+
   </header>
 
-  <div class="search-container">
-    <form id="search-form">
-      <input type="text" id="movie-search" placeholder="Search for a movie...">
-      <button type="submit" id="search-button"><i class="fas fa-search"></i></button>
-    </form>
-  </div>
+  
 
-  <main>
+  <main class="main-container">
 
-    <section id="results-section">
-      <h2><i class="fas fa-search"></i> Search Results</h2>
-      <div id="movie-results" class="movie-grid"></div>
-    </section>
-
-    <section id="watchlist-section">
+    <section id="watchlist-section" class="sidebar-section">
       <h2><i class="fas fa-list-ul"></i> My Weekend Watchlist</h2>
       <div id="watchlist" class="movie-grid">
         Your watchlist is empty. Search for movies to add!
       </div>
+    </section>
+
+
+    <section id="results-section" class="content-section">
+      <h2><i class="fas fa-search"></i> Search Results</h2>
+      <div id="movie-results" class="movie-grid"></div>
     </section>
   </main>
 
